@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "FAQs";
+}
+
+<h1>@Resources.FAQs.FrequentlyAskedQuestions</h1>
+
+<div class="accordion" id="faq-accordion">
+    <div class="card">
+        <div class="card-header" id="faq-heading-one">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq-answer-one" aria-expanded="false" aria-controls="faq-answer-one">
+                    Q: @Resources.FAQs.QuestionForgotUsernameOrPassword
+                </button>
+            </h5>
+        </div>
+        <div id="faq-answer-one" class="collapse" aria-labelledby="faq-heading-one" data-parent="#faq-accordion">
+            <div class="card-body">
+                A: @Resources.FAQs.AnswerForgotUsernameOrPassword
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="faq-heading-two">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq-answer-two" aria-expanded="false" aria-controls="faq-answer-two">
+                    Q:
+                </button>
+            </h5>
+        </div>
+        <div id="faq-answer-two" class="collapse" aria-labelledby="faq-heading-two" data-parent="#faq-accordion">
+            <div class="card-body">
+                A:
+            </div>
+        </div>
+    </div>
+</div>

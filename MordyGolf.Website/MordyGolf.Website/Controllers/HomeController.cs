@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MordyGolf.Website.Models;
+using System.Diagnostics;
 
 namespace MordyGolf.Website.Controllers
 {
@@ -24,6 +20,11 @@ namespace MordyGolf.Website.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult FAQs()
         {
             return View();
         }
