@@ -1,0 +1,70 @@
+variables:
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-Core
+name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+
+trigger:
+- development
+- release
+- master
+
+stages:
+- stage: Build
+  displayName: 'Build application'
+
+  jobs:
+  - job: Build
+    displayName: 'Build job'
+    pool:
+      #vmImage: 'windows-latest'
+      vmImage: 'ubuntu-18.04'
+
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: 'Restore packages'
+      inputs: 
+        command: Restore
+        projects: '**/*.csproj'
+        #vstsFeed: ''
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Build'
+        inputs:
+          projects: '**/*.website.csproj'
+          command: build
+          arguments: '--no-restore --configuration $(buildConfiguration)'
+
+    - task: Npm@1
+      displayName: 'NPM install'
+      inputs: 
+        command: 'install'
+        workingDir: 'MordyGolf.Website'
+
+    - task: Gulp@1
+      displayName: 'Gulp bundling'
+      inputs:
+        gulpFile: 'MordyGolf.Website\gulpfile.js'
+        targets: 'notLocal'
+        enableCodeCoverage: false
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Publish'
+      inputs:
+        command: 'publish'
+        publichWebProjects: true
+        arguments: '-o $(Build.ArtifactStagingDirectory)'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Run Unit Tests'
+      inputs: 
+        command: test
+        projects: '**\*.UnitTests.csproj'
+        arguments: '-c $(BuildConfiguration) --collect "Code coverage"'
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact'
