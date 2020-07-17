@@ -1,0 +1,23 @@
+﻿// Mixin Function Library
+// Collection of useful mixins and shortcuts for CSS generation.
+
+@mixin materialIcons() {
+    direction: ltr;
+    display: inline-block;
+    font-family: 'Material Icons';
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 1rem;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+
+    font-feature-settings: 'liga'; /* Support for IE. */
+    -moz-osx-font-smoothing: grayscale; /* Support for Firefox. */
+    text-rendering: optimizeLegibility; /* Support for Safari and Chrome. */
+    -webkit-font-smoothing: antialiased; /* Support for all WebKit browsers. */
+}
+
+@mixin boxShadow {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.03);
+}

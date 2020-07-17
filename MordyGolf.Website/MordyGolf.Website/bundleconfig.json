@@ -1,0 +1,26 @@
+[
+  {
+    "id": "js:site",
+    "localOutputFileName": "wwwroot/js/mg.js",
+    "outputFileName": "wwwroot/js/mg.min.js",
+    "inputFiles": [
+      "wwwroot/js/mg-index.js"
+    ]
+  },
+  {
+    "id": "scss:site",
+    "localOutputFileName": "wwwroot/css/mg.css",
+    "outputFileName": "wwwroot/css/mg.min.css",
+    "inputFiles": [
+      "Styles/mg-index.scss"
+    ]
+  },
+  {
+    "id": "scss:print",
+    "localOutputFileName": "wwwroot/css/mg-print.css",
+    "outputFileName": "wwwroot/css/mg-print.min.css",
+    "inputFiles": [
+      "Styles/mg-print.scss"
+    ]
+  }
+]

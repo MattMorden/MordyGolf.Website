@@ -1,0 +1,56 @@
+﻿@font-face {
+    font-family: 'mg-icons';
+    src: url('../fonts/mg-icons.woff2?') format('woff2'), url('../fonts/mg-icons.woff?') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    display: inline-block;
+    font-family: "mg-icons";
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    text-align: center;
+    width: 1em;
+    /* For safety - reset parent styles, that can break glyph codes */
+    font-variant: normal;
+    text-transform: none;
+    /* Fix buttons height, for twitter boostrap */
+    line-height: 1em;
+    /* you can be more comfortable with increased icon size */
+    /* font-size: 120%; */
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-hamburger:before {
+    content: '\e800';
+}
+
+.icon-info:before {
+    content: '\e801';
+}
+
+.icon-sort-asc:before {
+    content: '\e802';
+}
+
+.icon-sort-desc:before {
+    content: '\e803';
+}
+
+.icon-good:before {
+    content: '\e804';
+}
+
+.icon-arrow-left:before {
+    content: '\e805';
+}
+
+.icon-bad:before {
+    content: '\e806';
+}

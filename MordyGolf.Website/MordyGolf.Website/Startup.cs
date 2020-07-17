@@ -1,18 +1,20 @@
-using System;
-using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
+using MordyGolf.Website.Services;
+using MordyGolf.Website.Services.Interfaces;
 
 namespace MordyGolf.Website
 {
+    [ExcludeFromCodeCoverage]
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -25,25 +27,19 @@ namespace MordyGolf.Website
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-
-            #region Localization
-            services.AddLocalization(r => r.ResourcesPath = "Resouces");
-            services.Configure<RequestLocalizationOptions>(options =>
+            services.AddRazorPages();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+            services.AddRazorPages().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+            services.Configure<RazorViewEngineOptions>(options =>
             {
-                var supportedCultures = new[]
-                {
-                    new CultureInfo("en"),
-                    new CultureInfo("en-CA"),
-                    new CultureInfo("fr"),
-                    new CultureInfo("fr-CA")
-                };
-                options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en-CA");
-
-                options.SupportedCultures = supportedCultures;
-                options.SupportedUICultures = supportedCultures;
+                options.ViewLocationFormats.Add("/Pages/Shared/Components/{0}.cshtml");
+                options.ViewLocationFormats.Add("/Pages/Shared/PartialViews/{0}.cshtml");
             });
-            #endregion
+
+            services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
+
+            services.AddTransient<IComponentService, ComponentService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,12 +61,30 @@ namespace MordyGolf.Website
             app.UseRouting();
 
             app.UseAuthorization();
+            var supportedCultures = new[]
+            {
+                new CultureInfo("en-CA"),
+                new CultureInfo("fr-CA"),
+                new CultureInfo("en"),
+                new CultureInfo("fr")
+            };
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("en-CA"),
+                // Formatting numbers, dates, etc
+                SupportedCultures = supportedCultures,
+                // UI strings that we have localized.
+                SupportedUICultures = supportedCultures
+            });
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapRazorPages();
             });
         }
     }

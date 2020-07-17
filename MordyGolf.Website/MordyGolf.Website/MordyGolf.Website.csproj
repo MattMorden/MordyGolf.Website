@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Resources\FAQs.fr.resx" />
-    <Content Remove="Views\Resources\FAQs.resx" />
+    <Content Remove="Resources\FAQs.fr.resx" />
+    <Content Remove="Resources\FAQs.resx" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Views\Resources\FAQs.Designer.cs">
+    <Content Include="Resources\FAQs.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>FAQs.resx</DependentUpon>
@@ -18,16 +18,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.5" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Resources\FAQs.Designer.cs">
+    <Compile Update="Resources\FAQs.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>FAQs.resx</DependentUpon>
     </Compile>
-    <Compile Update="Views\Resources\TeeTime.Designer.cs">
+    <Compile Update="Resources\Home.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Home.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\TeeTime.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TeeTime.resx</DependentUpon>
@@ -35,26 +41,42 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\Resources\FAQs.fr.resx">
+    <EmbeddedResource Update="Resources\FAQs.fr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <CustomToolNamespace>Resources</CustomToolNamespace>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Resources\FAQs.resx">
+    <EmbeddedResource Update="Resources\FAQs.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FAQs.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Resources\TeeTime.fr.resx">
+    <EmbeddedResource Update="Resources\Home.fr.resx">
+      <CustomToolNamespace>Resources</CustomToolNamespace>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <CustomToolNamespace>sources</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Resources\TeeTime.resx">
+    <EmbeddedResource Update="Resources\Home.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\TeeTime.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\TeeTime.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>TeeTime.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Pages\Shared\PartialViews\" />
+    <Folder Include="wwwroot\fonts\" />
   </ItemGroup>
 
 </Project>

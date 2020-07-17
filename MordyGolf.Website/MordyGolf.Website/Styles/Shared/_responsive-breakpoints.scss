@@ -1,0 +1,55 @@
+﻿//------------------------
+// Responsive Breakpoints
+//------------------------
+
+// Range Definitions (Not to be used outside of this file!)
+$phone-range: (0, 576px);
+$tablet-range:(577px, 991px);
+$desktop-range: (992px);
+
+// Responsive Mixins
+@function lower-bound($range) {
+    @if (length($range) <= 0){
+        @return 0;
+    }
+    @return nth($range, 1);
+}
+
+@function upper-bound($range){
+    @if (length($range) < 2 ){
+        @return 999999999999;
+    }
+    @return nth($range, 2);
+}
+
+// Media Query Definitions
+$screen: 'only screen' !default;
+
+// Landscape and Portrait Orientation
+$landscape: '#{$screen} and (orientation: landscape)' !default;
+$portrait: '#{$screen} and (orientation: portrait)' !default;
+
+// Mobile Size
+$phone-up: $screen !default;
+$phone-only: '#{$screen} and (max-width: #{upper-bound($phone-range)})' !default;
+
+// Tablet Size
+$up-to-tablet: '#{$screen} and (max-width:#{upper-bound($tablet-range)})' !default;
+$tablet-up: '#{$screen} and (min-width:#{upper-bound($tablet-range)})' !default;
+$tablet-only: '#{$screen} and (min-width:#{upper-bound($tablet-range)}) and (max-width:#{upper-bound($tablet-range)})' !default;
+
+// Tablet Landscape
+$tablet-lnd-up: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (orientation:landscape)' !default;
+$tablet-lnd-only: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (max-width:#{upper-bound($tablet-range)}) and (orientation:landscape)' !default;
+
+// Tablet Portrait
+$tablet-prt-up: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (orientation:portrait)' !default;
+$tablet-prt-only: '#{$screen} and (min-width:#{lower-bound($tablet-range)}) and (max-width:#{upper-bound($tablet-range)}) and (orientation:portrait)' !default;
+
+// Oversize Displays
+$desktop-up: '#{$screen} and (min-width:#{lower-bound($desktop-range)})' !default;
+
+// Browser Selector Hacks
+$iphone-x: 'only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)';
+$internet-explorer: 'screen and (-ms-high-contract: active), (-ms-high-contrast: none)';
+$firefox: 'all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)';

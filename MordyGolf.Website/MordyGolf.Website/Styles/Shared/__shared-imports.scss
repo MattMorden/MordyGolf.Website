@@ -1,0 +1,21 @@
+﻿// SHARED IMPORTS
+// This file holds all of the global SCSS imports needed to generate a separate CSS stylesheet
+// while still being able to utilize the same variable and mixins as the rest of the site.
+
+// Base Variables
+@import '_base-variables';
+
+// SASS Mixins
+@import '_mixins';
+
+// Responsive Breakpoints
+@import '_responsive-breakpoints';
+
+// Global Reset
+@import '_reset';
+
+// Typography
+@import '_typography';
+
+// Icons
+@import '_mg-icons';

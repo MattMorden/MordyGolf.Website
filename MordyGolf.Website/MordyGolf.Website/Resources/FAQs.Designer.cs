@@ -22,14 +22,14 @@ namespace Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class TeeTime {
+    public class FAQs {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal TeeTime() {
+        internal FAQs() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MordyGolf.Website.Views.Resources.TeeTime", typeof(TeeTime).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MordyGolf.Website.Resources.FAQs", typeof(FAQs).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,29 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Book a Tee Time.
+        ///   Looks up a localized string similar to If you have forgotten your username or password, visit our Forgotten Username or Password page..
         /// </summary>
-        public static string BookATeeTime {
+        public static string AnswerForgotUsernameOrPassword {
             get {
-                return ResourceManager.GetString("BookATeeTime", resourceCulture);
+                return ResourceManager.GetString("AnswerForgotUsernameOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequently Asked Questions.
+        /// </summary>
+        public static string FrequentlyAskedQuestions {
+            get {
+                return ResourceManager.GetString("FrequentlyAskedQuestions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I have an account, but I&apos;ve forgotten my username or password. What do I do?.
+        /// </summary>
+        public static string QuestionForgotUsernameOrPassword {
+            get {
+                return ResourceManager.GetString("QuestionForgotUsernameOrPassword", resourceCulture);
             }
         }
     }

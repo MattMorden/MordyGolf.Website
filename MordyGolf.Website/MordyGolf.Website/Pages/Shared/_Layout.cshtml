@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="@(Context.Request.Query["culture"].ToString() == "en" ||
+    Context.Request.Query["culture"].ToString() == "fr" ||
+    Context.Request.Query["culture"].ToString() == "en-CA" ||
+    Context.Request.Query["culture"].ToString() == "fr-CA"  ?
+    Context.Request.Query["culture"].ToString() : "en")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <environment exclude="Development">
+        <title>Mordy Golf</title>
+        <link rel="stylesheet" href="~css/mg.min.css" asp-append-version="true" />
+        <script src="~/js/mg.min.js" asp-append-verison="true" defer></script>
+    </environment>
+    <environment include="Development">
+        <title>Mordy Golf</title>
+        <link rel="stylesheet" href="~/css/mg.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/mg-print.css" media="print" asp-append-version="true" />
+        <script src="~/js/mg.js" asp-append-version="true" defer></script>
+    </environment>
+
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <a class="desktop-en" href="/&culture=en">EN</a>
+            <a class="desktop-fr" href="/&culture=fr">FR</a>
+        </nav>
+        <section class="menu-container default">
+            <nav>
+                <button id="menuOneOpen" class="menu-button menu-open" aria-label="Menu" tabindex="0"><span class="icon-hamburger"></span></button>
+                <button id="menuClose" class="menu-button menu-close" aria-label="Close" tabindex="0"><span class="icon-x"></span></button>
+                <h3>FAQs</h3>
+                <button id="menuBack" class="menu-button menu-back" aria-label="Back" tabindex="0"><span class="icon-arrow-left"></span></button>
+            </nav>
+            <section class="menu menu-one">
+                <a class="menu-action"><h3>Text</h3></a>
+                <a class="menu-action"><h3>Text</h3></a>
+                <button id="menuTwoOpen" class="menu-action menu-button menu-faq">
+                    <span>FAQs</span>
+                    <i class="icon-sort"></i>
+                </button>
+                <div class="menu-action menu-language">
+                    <span>Language: </span><a class="language-en">@Resources.Home.English</a>|<a class="language-fr">@Resources.Home.French</a>
+                </div>
+            </section>
+            <section class="menu menu-two">
+                <div class="menu-action menu-help">
+                    <h3>Contact us for help</h3>
+                    <a href="mailto:support@mordygolf.com">test@test.com</a>
+                </div>
+                <a class="menu-action"><h3>FAQ</h3></a>
+                <a class="menu-action"><h3>Book A Tee Time</h3></a>
+            </section>
+        </section>
+    </header>
+    <div class="container">
+        @RenderBody()
+
+        @RenderSection("Scripts", required: false)
+    </div>
+
+    <footer>
+        <h2><span>Contact us</span></h2>
+        <div class="links">
+            <span class="mg-address">Canada</span>|
+            <span class="mg-phone">123-456-7890</span>|
+            <a class="mg-email" href="mailto:support@mordygolf.com">support@mordygolf.com</a>
+            <a class="mg-faq">FAQ</a>
+            <a class="mg-book-a-tee-time">Book A Tee Time</a>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

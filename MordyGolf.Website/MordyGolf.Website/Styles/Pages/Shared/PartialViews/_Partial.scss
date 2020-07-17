@@ -1,0 +1,31 @@
+﻿/* PartialView Template */
+@import "../../../Shared/_mg-variables";
+@import "../../../Shared/_base-variables";
+@import "../../../Shared/_responsive-breakpoints";
+@import "../../../Shared/_mixins";
+
+.partial {
+    background: $White;
+    border-bottom: 1px solid $grey;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 0 27px;
+    padding: 25px 15px;
+    text-align: center;
+
+    @media #{$tablet-up} {
+        margin: 0 0 37px;
+        padding: 46px 47px 33px;
+        text-align: left;
+    }
+
+    @media #{$desktop-up} {
+        margin: 0 0 57px;
+        padding: 41px 47px 30px;
+    }
+
+    @media print {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+}

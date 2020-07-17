@@ -1,0 +1,99 @@
+﻿@import '_mg-variables.scss';
+@import '_responsive-breakpoints.scss';
+//------------------------------------
+// TYPOGRAPHY
+//------------------------------------
+
+/*@font-face {
+    font-family: 'noto-sansbold';
+    src: url('../fonts/notosans-bold-webfont.woff2') format('woff2'), url('../fonts/notosans-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+/* Main */
+body {
+    color: $grey;
+    //font-family: 'noto_sansregular', sans-serif;
+    font-size: 16px;
+    line-height:22px;
+
+    strong {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    @media #{$desktop-up} {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    h1 {
+        color: $black;
+        font-size: 30px;
+        line-height: 36px;
+
+        @media #{$tablet-up} {
+            font-size: 40px;
+            line-height: 46px;
+        }       
+    }
+
+    h2 {
+        color: $black;
+        font-size: 24px;
+        line-height: 30px;
+
+        @media #{$tablet-up} {
+            font-size: 28px; 
+            line-height: 34px;
+        }
+    }
+
+    h3 {
+        color: $black; 
+        font-size: 20px;
+        line-height: 26px;
+
+        @media #{$desktop-up} {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    h4 {
+        color: $black;
+        font-size: 17px;
+        line-height: 23px;
+
+        @media #{$desktop-up} {
+            font-size: 13px;
+            line-height: 19px;
+            text-transform: uppercase;
+        }
+    }
+
+    ul {
+        font-size: 13px;
+        line-height: 19px;
+
+        @media #{$desktop-up} {
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+     a {
+         border-bottom: 1px solid transparent;
+         color: $lightgreen;
+         //font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+         text-decoration: none;
+
+         &:hover {
+             border-bottom: 1px solid $lightgreen;
+         }
+
+         &:visited {
+             color: $anchorvisited;
+         }
+     }
+}

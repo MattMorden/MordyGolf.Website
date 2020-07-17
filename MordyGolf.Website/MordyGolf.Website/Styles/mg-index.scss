@@ -1,0 +1,15 @@
+﻿/* SITE-INDEX
+    This file stored all of the imports needed to generate the main stylesheet for this project.
+    Output as mg.css to wwwroot.
+
+    Refrain from adding styles directly in this file, instead creating a relevant SCSS sheet and importing it here where relevant.
+*/
+
+/* Global Shared Import */
+@import './Shared/__shared-imports';
+
+/* MG Variables */
+@import './Shared/_mg-variables.scss';
+
+/* Home View */
+@import './Pages/Shared/Components/Home';
