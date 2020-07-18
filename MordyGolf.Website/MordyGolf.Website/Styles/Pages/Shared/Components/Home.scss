@@ -275,6 +275,52 @@ body {
 
     }*/
 
+    @media #{$up-to-tablet} {
+        display: none;
+    }
+
+    @media #{$desktop-up} {
+        align-items: center;
+        border-top: 1px solid $grey;
+        display: flex;
+        flex-flow: column nowrap;
+        height: 160px;
+        margin: $padding-desktop;
+        h2 {
+            color: $grey;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 28px 0 15px;
+
+            span {
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+        }
+
+        .links {
+            font-size: 18px;
+            line-height: 24px;
+            width: 100%;
+
+            a {
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            .address {
+                letter-spacing: .2px;
+                margin: 0 8px 0 0;
+            }
+
+            .phone, .email {
+                letter-spacing: .2px;
+                margin: 0 9 0 6px;
+            }
+
+            .faq {
+                margin: 0 11px 0 5px;
+            }
+        }
+    }
+
     .content {
         margin: 0 0 45px;
         padding: 44px 0 0;
