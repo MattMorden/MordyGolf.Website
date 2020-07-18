@@ -1,0 +1,234 @@
+/* Global Shared Import */
+/*Green Shades*/
+/*Status Colours*/
+/*Fonts*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+/*@font-face {
+    font-family: 'noto-sansbold';
+    src: url('../fonts/notosans-bold-webfont.woff2') format('woff2'), url('../fonts/notosans-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}*/
+/* Main */
+body {
+  color: #a4a4a4;
+  font-size: 16px;
+  line-height: 22px; }
+  body strong {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+  @media only screen and (min-width: 992px) {
+    body {
+      font-size: 14px;
+      line-height: 20px; } }
+  body h1 {
+    color: #202327;
+    font-size: 30px;
+    line-height: 36px; }
+    @media only screen and (min-width: 991px) {
+      body h1 {
+        font-size: 40px;
+        line-height: 46px; } }
+  body h2 {
+    color: #202327;
+    font-size: 24px;
+    line-height: 30px; }
+    @media only screen and (min-width: 991px) {
+      body h2 {
+        font-size: 28px;
+        line-height: 34px; } }
+  body h3 {
+    color: #202327;
+    font-size: 20px;
+    line-height: 26px; }
+    @media only screen and (min-width: 992px) {
+      body h3 {
+        font-size: 18px;
+        line-height: 24px; } }
+  body h4 {
+    color: #202327;
+    font-size: 17px;
+    line-height: 23px; }
+    @media only screen and (min-width: 992px) {
+      body h4 {
+        font-size: 13px;
+        line-height: 19px;
+        text-transform: uppercase; } }
+  body ul {
+    font-size: 13px;
+    line-height: 19px; }
+    @media only screen and (min-width: 992px) {
+      body ul {
+        font-size: 12px;
+        line-height: 18px; } }
+  body a {
+    border-bottom: 1px solid transparent;
+    color: #55e42c;
+    text-decoration: none; }
+    body a:hover {
+      border-bottom: 1px solid #55e42c; }
+    body a:visited {
+      color: #00ff90; }
+
+@font-face {
+  font-family: 'mg-icons';
+  src: url("../fonts/mg-icons.woff2?") format("woff2"), url("../fonts/mg-icons.woff?") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  display: inline-block;
+  font-family: "mg-icons";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  text-align: center;
+  width: 1em;
+  /* For safety - reset parent styles, that can break glyph codes */
+  font-variant: normal;
+  text-transform: none;
+  /* Fix buttons height, for twitter boostrap */
+  line-height: 1em;
+  /* you can be more comfortable with increased icon size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-hamburger:before {
+  content: '\e800'; }
+
+.icon-info:before {
+  content: '\e801'; }
+
+.icon-sort-asc:before {
+  content: '\e802'; }
+
+.icon-sort-desc:before {
+  content: '\e803'; }
+
+.icon-good:before {
+  content: '\e804'; }
+
+.icon-arrow-left:before {
+  content: '\e805'; }
+
+.icon-bad:before {
+  content: '\e806'; }
+
+/* MG Variables */
+/*Green Shades*/
+/*Status Colours*/
+/*Fonts*/
+html {
+  display: flex;
+  flex-flow: column nowrap;
+  height: calc(100% - 10px); }
+  html body {
+    align-items: center;
+    box-sizing: border-box;
+    min-width: 375px; }
+    @media print {
+      html body {
+        flex: 1 1 auto; } }
+    html body .mg {
+      margin: 0 auto;
+      max-width: 600px; }
+      @media tablet-up {
+        html body .mg {
+          max-width: 1024px; } }
+      html body .mg header {
+        display: flex;
+        flex-flow: row nowrap; }
+        html body .mg header .icon {
+          width: 64px; }
+        html body .mg header .icon-info {
+          height: 16px;
+          width: 16px; }
+      @media only screen and (min-width: 991px) {
+        html body .mg .card-mobile {
+          display: none; } }
+      html body .mg .card-desktop-table {
+        display: none; }
+        @media only screen and (min-width: 991px) {
+          html body .mg .card-desktop-table {
+            display: block; } }
+      html body .mg .card-wrapper {
+        background: #a4a4a4;
+        border: 1px solid #202327;
+        border-radius: 4px;
+        padding-left: 5px; }
+        html body .mg .card-wrapper .card-content {
+          background: #fff;
+          padding: 10px; }
+          html body .mg .card-wrapper .card-content header {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between; }
+            @media only screen and (min-width: 991px) {
+              html body .mg .card-wrapper .card-content header .card-toggle {
+                display: none; } }
+            html body .mg .card-wrapper .card-content header .card-toggle:hover {
+              cursor: pointer; }
+          html body .mg .card-wrapper .card-content .card-collapse {
+            display: none; }
+        html body .mg .card-wrapper .card-mobile-table div {
+          display: flex;
+          flex-flow: row nowrap; }
+          html body .mg .card-wrapper .card-mobile-table div:not(:last-child) {
+            border-bottom: 1px solid #00ff22; }
+          html body .mg .card-wrapper .card-mobile-table div h3 {
+            width: 200px; }
