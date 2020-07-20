@@ -5,8 +5,8 @@
 //------------------------------------
 
 /*@font-face {
-    font-family: 'noto-sansbold';
-    src: url('../fonts/notosans-bold-webfont.woff2') format('woff2'), url('../fonts/notosans-bold-webfont.woff') format('woff');
+    font-family: 'name-b';
+    src: url('../fonts/xxx-webfont.woff2') format('woff2'), url('../fonts/xxx-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }*/
@@ -85,7 +85,7 @@ body {
      a {
          border-bottom: 1px solid transparent;
          color: $lightgreen;
-         //font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
          text-decoration: none;
 
          &:hover {
