@@ -63,8 +63,8 @@ html {
   box-sizing: border-box; }
 
 /*@font-face {
-    font-family: 'noto-sansbold';
-    src: url('../fonts/notosans-bold-webfont.woff2') format('woff2'), url('../fonts/notosans-bold-webfont.woff') format('woff');
+    font-family: 'name-b';
+    src: url('../fonts/xxx-webfont.woff2') format('woff2'), url('../fonts/xxx-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }*/
@@ -122,6 +122,7 @@ body {
   body a {
     border-bottom: 1px solid transparent;
     color: #55e42c;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: none; }
     body a:hover {
       border-bottom: 1px solid #55e42c; }
@@ -203,159 +204,45 @@ body {
     .mg {
       max-width: 1024px; } }
   .mg .nav {
-    align-items: center;
-    background: #f1e1e1;
-    display: flex;
-    height: 40px;
-    flex-flow: row-reverse;
-    padding: 0 47px; }
-    @media only screen and (max-width: 991px) {
-      .mg .nav {
-        display: none; } }
+    background-color: #f1e1e1;
+    overflow: hidden;
+    position: relative;
+    /* The responsive class is added to the nav with Javascript when user clicks on the icon. 
+            This makes the nav look good on small screens (displays links vertically instead of horizontally)
+        */ }
     .mg .nav a {
-      border: none;
-      color: #202327;
-      cursor: pointer;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: 14px;
-      line-height: 20px; }
-      .mg .nav a.desktop-en {
-        margin: 0 0 0 29px; }
-        .mg .nav a.desktop-en:lang(en) {
-          display: none; }
-      .mg .nav a.desktop-fr {
-        margin: 0 0 0 34px; }
-        .mg .nav a.desktop-fr:lang(fr) {
-          display: none; }
-  @media only screen and (min-width: 992px) {
-    .mg .menu-container {
-      display: none; } }
-  .mg .menu-container.default .menu-close, .mg .menu-container.default .menu-back, .mg .menu-container.default .menu-one, .mg .menu-container.default .menu-two, .mg .menu-container.default h3 {
-    display: none; }
-  .mg .menu-container.menu-one .menu-open, .mg .menu-container.menu-one .menu-back, .mg .menu-container.menu-one .default, .mg .menu-container.menu-one .menu-two, .mg .menu-container.menu-one h3 {
-    display: none; }
-  .mg .menu-container.menu-two .menu-open, .mg .menu-container.menu-two .default, .mg .menu-container.menu-two .menu-one {
-    display: none; }
-  @media only screen and (min-width: 991px) {
-    .mg .menu-container.default nav {
-      padding: 11px 39px; } }
-  .mg .menu-container nav {
-    align-items: flex-end;
-    background: #f1e1e1;
-    display: flex;
-    height: 82px;
-    flex-flow: row-reverse;
-    justify-content: space-between;
-    padding: 12px 16px; }
-    @media only screen and (min-width: 991px) {
-      .mg .menu-container nav {
-        height: 40px;
-        padding: 11px 25px; } }
-    .mg .menu-container nav .menu-open {
-      color: #202327;
+      color: #55e42c;
+      display: block;
+      float: left;
       font-size: 17px;
-      height: 21px;
-      width: 24px; }
-    .mg .menu-container nav .menu-back {
-      width: 17px; }
-    .mg .menu-container nav button {
-      cursor: pointer; }
-      @media only screen and (min-width: 991px) {
-        .mg .menu-container nav button {
-          font-size: 16px; } }
-      .mg .menu-container nav button.menu-button span {
-        display: inline-block;
-        pointer-events: none;
-        width: 100%; }
-    .mg .menu-container nav h3 {
-      color: #00ff90;
-      position: relative;
-      top: 5px; }
-  .mg .menu {
-    background: #fff;
-    height: 100%;
-    position: fixed;
-    width: 100%; }
-    .mg .menu.menu-one {
-      z-index: 2; }
-    .mg .menu.menu-two {
-      z-index: 3; }
-    .mg .menu .menu-action {
-      align-items: center;
-      border-bottom: 1px solid #a4a4a4;
-      cursor: pointer;
-      display: flex;
-      font-size: 18px;
-      justify-content: center;
-      line-height: 24px;
-      padding: 22px 0;
-      text-align: center; }
-      .mg .menu .menu-action:hover {
-        text-decoration: none; }
-      .mg .menu .menu-action.menu-faq {
-        color: #00ff90;
-        font-size: 18px;
-        height: 71px;
-        line-height: 24px;
-        width: 100%; }
-        .mg .menu .menu-action.menu-faq span {
-          margin: 0 0 0 9px; }
-      .mg .menu .menu-action.menu-language {
-        height: 71px; }
-        .mg .menu .menu-action.menu-language span {
-          position: relative;
-          right: 8px; }
-      .mg .menu .menu-action.menu-help {
-        flex-flow: column nowrap;
-        padding: 17px 0; }
-        @media only screen and (min-width: 991px) {
-          .mg .menu .menu-action.menu-help {
-            padding: 21px 0; } }
-        .mg .menu .menu-action.menu-help h3 {
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          color: #a4a4a4;
-          font-size: 26px;
-          line-height: 32px;
-          margin: 0 0 22px; }
-          @media only screen and (min-width: 991px) {
-            .mg .menu .menu-action.menu-help h3 {
-              margin: 0 0 43px; } }
-        .mg .menu .menu-action.menu-help a {
-          color: #a4a4a4;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          margin: 0 0 3px 0; }
-          @media only screen and (min-width: 991px) {
-            .mg .menu .menu-action.menu-help a {
-              margin: 0; } }
-      .mg .menu .menu-action h3 {
-        color: #a4a4a4;
-        display: inline; }
-      .mg .menu .menu-action span {
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        pointer-events: none; }
-      .mg .menu .menu-action .icon-sort {
-        font-size: 9px;
-        left: 3px;
+      padding: 14px 16px;
+      text-align: center;
+      text-decoration: none; }
+      .mg .nav a:hover {
+        background: #00ff90;
+        color: #202327; }
+      .mg .nav a.active {
+        color: #f1e1e1; }
+      @media only screen and (max-width: 991px) {
+        .mg .nav a:not(:first-child) {
+          display: none; }
+        .mg .nav a.icon {
+          float: right;
+          display: block; } }
+      @media only screen and (min-width: 992px) {
+        .mg .nav a.icon {
+          display: none; } }
+    @media only screen and (max-width: 991px) {
+      .mg .nav.responsive {
         position: relative; }
-    .mg .menu .language-en, .mg .menu .language-fr {
-      border-bottom: 1px solid transparent;
-      color: #202327;
-      display: inline-block;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
-      .mg .menu .language-en:hover, .mg .menu .language-fr:hover {
-        border-color: #00ff90; }
-    .mg .menu .language-en:lang(en), .mg .menu .language-fr:lang(fr) {
-      border-bottom: 1px solid #00ff90;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
-    .mg .menu .language-en {
-      position: relative;
-      right: 3px; }
-    .mg .menu .language-fr {
-      position: relative;
-      left: 7px; }
-  @media only screen and (max-width: 991px) {
-    .mg {
-      display: none; } }
+        .mg .nav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0; }
+        .mg .nav.responsive a {
+          float: none;
+          display: block;
+          text-align: left; } }
   @media only screen and (min-width: 992px) {
     .mg {
       align-items: center;

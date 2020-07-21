@@ -16,43 +16,21 @@
         <title>Mordy Golf</title>
         <link rel="stylesheet" href="~/css/mg.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/mg-print.css" media="print" asp-append-version="true" />
-        <script src="~/js/mg.js" asp-append-version="true" defer></script>
+
+        <!-- TODO: Get Hamburger icon elsewhere -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="~/js/mg-index.js" asp-append-version="true" defer></script>
     </environment>
 
 </head>
-<body>
+<body class="mg">
     <header>
-        <nav class="nav">
-            <a class="desktop-en" href="/&culture=en">EN</a>
-            <a class="desktop-fr" href="/&culture=fr">FR</a>
+        <nav class="nav" id="navBar">            
+            <a href="/Home">Home</a>
+            <a href="/FAQs">FAQs</a>
+            <a href="/TeeTime">Book A Tee Time</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"><i class="fa fa-bars"></i></a>
         </nav>
-        <section class="menu-container default">
-            <nav>
-                <button id="menuOneOpen" class="menu-button menu-open" aria-label="Menu" tabindex="0"><span class="icon-hamburger"></span></button>
-                <button id="menuClose" class="menu-button menu-close" aria-label="Close" tabindex="0"><span class="icon-x"></span></button>
-                <h3>FAQs</h3>
-                <button id="menuBack" class="menu-button menu-back" aria-label="Back" tabindex="0"><span class="icon-arrow-left"></span></button>
-            </nav>
-            <section class="menu menu-one">
-                <a class="menu-action"><h3>Text</h3></a>
-                <a class="menu-action"><h3>Text</h3></a>
-                <button id="menuTwoOpen" class="menu-action menu-button menu-faq">
-                    <span>FAQs</span>
-                    <i class="icon-sort"></i>
-                </button>
-                <div class="menu-action menu-language">
-                    <span>Language: </span><a class="language-en">@Resources.Home.English</a>|<a class="language-fr">@Resources.Home.French</a>
-                </div>
-            </section>
-            <section class="menu menu-two">
-                <div class="menu-action menu-help">
-                    <h3>Contact us for help</h3>
-                    <a href="mailto:support@mordygolf.com">test@test.com</a>
-                </div>
-                <a class="menu-action"><h3>FAQ</h3></a>
-                <a class="menu-action"><h3>Book A Tee Time</h3></a>
-            </section>
-        </section>
     </header>
     <div class="container">
         @RenderBody()

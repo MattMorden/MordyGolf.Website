@@ -13,9 +13,13 @@ body {
 }
 
 .mg {
+    font-family: $default-font;
+    margin: 0 auto;
+    max-width: 576px;
     padding: $padding-mobile;
 
     @media #{$tablet-up} {
+        max-width: 1024px;
         padding: $padding-tablet;
     }
 
@@ -23,59 +27,73 @@ body {
         padding: $padding-desktop;
     }
 
-    margin: 0 auto;
-    max-width: 576px;
-
-    @media #{$tablet-up} {
-        max-width: 1024px;
-    }
-
     .nav {
-        align-items: center;
-        background: $offwhite;
-        display: flex;
-        height: 40px;
-        flex-flow: row-reverse;
-        padding: 0 47px;
-
-        @media #{$up-to-tablet} {
-            display: none;
-        }
+        background-color: $offwhite;
+        overflow: hidden;
+        position: relative;
 
         a {
-            border: none;
-            color: $black;
-            cursor: pointer;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 14px;
-            line-height: 20px;
+            color: $lightgreen;
+            display: block;
+            float: left;
+            font-size: 17px;
+            padding: 14px 16px;
+            text-align: center;
+            text-decoration: none;
 
-            &.desktop-en {
-                margin: 0 0 0 29px;
 
-                &:lang(en) {
+            &:hover {
+                background: $green;
+                color: $black;
+            }
+
+            &.active {
+                color: $offwhite;
+            }
+
+            @media #{$up-to-tablet} {
+                &:not(:first-child) {
                     display: none;
+                }
+
+                &.icon {
+                    float: right;
+                    display: block;
                 }
             }
 
-            &.desktop-fr {
-                margin: 0 0 0 34px;
-
-                &:lang(fr) {
+            @media #{$desktop-up} {
+                &.icon {
                     display: none;
                 }
             }
         }
-    }
+        /* The responsive class is added to the nav with Javascript when user clicks on the icon. 
+            This makes the nav look good on small screens (displays links vertically instead of horizontally)
 
+            DUE TO SPECIFICITY -> This must appear below the standard .nav a styling
+        */
+        @media #{$up-to-tablet} {
+            &.responsive {
+                position: relative;
+
+                .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+
+                a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                }
+            }
+        }
+    }
     /*header {
 
     }*/
-
-    @media #{$up-to-tablet} {
-        display: none;
-    }
-
     @media #{$desktop-up} {
         align-items: center;
         border-top: 1px solid $grey;
@@ -83,24 +101,16 @@ body {
         flex-flow: column nowrap;
         height: 160px;
         margin: $padding-desktop;
+
         h2 {
             color: $grey;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             margin: 28px 0 15px;
-
-            span {
-                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            }
         }
 
         .links {
             font-size: 18px;
             line-height: 24px;
             width: 100%;
-
-            a {
-                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            }
 
             .address {
                 letter-spacing: .2px;
@@ -203,7 +213,6 @@ body {
                         border-radius: 4px;
                         color: $white;
                         display: inline-block;
-                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                         padding: 20px;
                         position: relative;
                         z-index: 1;
@@ -397,7 +406,7 @@ body {
                     }
                 }
 
-                &nth-child(even) {
+                &:nth-child(even) {
                     background: rgba($grey, .05);
 
                     .mobile-table-cell:not(:last-child) {
@@ -434,7 +443,6 @@ body {
 
                     .mobile-label {
                         flex: 0 0 auto;
-                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                         width: 89px;
 
                         @media #{$tablet-up} {
@@ -524,6 +532,5 @@ body {
             }
         }
     }
-
     //@import "../PartialViews/_PartialViewName";
 }
