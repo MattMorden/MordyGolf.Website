@@ -9,5 +9,6 @@ namespace MordyGolf.Website.Services.Interfaces
     public interface IComponentService
     {
         HomeViewComponentModel GetHomeViewComponentModel();
+        FAQsViewComponentModel GetFAQViewComponentModel();
     }
 }

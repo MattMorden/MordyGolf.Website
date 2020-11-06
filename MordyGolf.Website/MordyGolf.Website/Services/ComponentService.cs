@@ -27,5 +27,10 @@ namespace MordyGolf.Website.Services
         {
             return new HomeViewComponentModel();
         }
+
+        public FAQsViewComponentModel GetFAQViewComponentModel()
+        {
+            return new FAQsViewComponentModel();
+        }
     }
 }
